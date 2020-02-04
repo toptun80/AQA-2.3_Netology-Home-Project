@@ -1,4 +1,4 @@
-image: Visual Studio 2015  # образ для сборки
+image: Ubuntu1804  # образ для сборки
 
 branches:
   only:
@@ -11,6 +11,7 @@ install:
   - ps: $App = Start-Process -FilePath java -ArgumentList "-jar ./artifacts/app-order.jar" -PassThru
 
 build_script:
+  - ps: chmod +x ./gradlew
   - ps: ./gradlew test --info "-Dselenide.headless=true"  # стартуем Selenide в Headless-режиме (см.ниже)
 
 on_finish:

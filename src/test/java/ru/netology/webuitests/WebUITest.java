@@ -73,28 +73,6 @@ public class WebUITest {
     }
 
     @Test
-    @DisplayName("Не заполнено поле Имя")
-    void nameFieldIsEmpty() {
-        phoneField.sendKeys("+79040402204");
-        checkbox.click();
-        button.click();
-        String text = driver.findElement(By.cssSelector("span.input_invalid span.input__sub")).getText();
-        assertEquals("Поле обязательно для заполнения",
-                text.trim());
-    }
-
-    @Test
-    @DisplayName("Не заполнено поле Телефон")
-    void phoneFieldIsEmpty() {
-        nameField.sendKeys("Нефедова Анастасия");
-        checkbox.click();
-        button.click();
-        String text = driver.findElement(By.cssSelector("span.input_invalid span.input__sub")).getText();
-        assertEquals("Поле обязательно для заполнения",
-                text.trim());
-    }
-
-    @Test
     @DisplayName("Не заполнен чекбокс")
     void checkboxIsEmpty() {
         nameField.sendKeys("Нефедова Анастасия");
