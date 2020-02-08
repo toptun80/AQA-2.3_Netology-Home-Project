@@ -73,17 +73,7 @@ public class WebUITest {
     }
 
     @Test
-    @DisplayName("Не заполнен чекбокс")
-    void checkboxIsEmpty() {
-        nameField.sendKeys("Нефедова Анастасия");
-        phoneField.sendKeys("+79040402204");
-        button.click();
-        WebElement element = driver.findElement(By.cssSelector("label.checkbox span.checkbox__text"));
-        assertEquals("rgba(255, 92, 92, 1)", element.getCssValue("color"));
-    }
-
-    @Test
-    @DisplayName("256 символов в поле Имя")
+    @DisplayName("104 символа в поле Имя")
     void input256CharsInNameField() {
         for (int i = 0; i < 13; i++) {
             nameField.sendKeys("Проверка");
