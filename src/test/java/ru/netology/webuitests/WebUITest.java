@@ -74,7 +74,7 @@ public class WebUITest {
 
     @Test
     @DisplayName("104 символа в поле Имя")
-    void input256CharsInNameField() {
+    void input104CharsInNameField() {
         for (int i = 0; i < 13; i++) {
             nameField.sendKeys("Проверка");
         }
